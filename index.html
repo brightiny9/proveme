@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ProveMe: 세무사 1차 기출 60초 챌린지</title>
+<meta name="description" content="AI 없이, 실제 세무사 1차 기출문제를 60초 안에 풀 수 있어? 5문항 × 60초 재미용 챌린지.">
+<meta property="og:title" content="ProveMe: 세무사 1차 기출 60초 챌린지">
+<meta property="og:description" content="AI 없이, 실제 세무사 1차 기출문제를 60초 안에 풀 수 있어? 5문항 × 60초.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f4efe6">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section id="start" class="screen">
+    <p class="brand">ProveMe</p>
+    <h1>AI 없이,<br>실제 세무사 1차 문제를<br><em>60초</em> 안에 풀 수 있어?</h1>
+    <ul class="rules">
+      <li>기출 5문항을 무작위로 뽑아요.</li>
+      <li>문항마다 60초. 시간이 다 되면 오답이에요.</li>
+      <li>4문항 이상 맞히면 공유 카드를 만들어 드려요.</li>
+      <li>틀려도 아무 데도 기록되지 않아요.</li>
+    </ul>
+    <button id="start-btn" class="primary" disabled>불러오는 중…</button>
+    <p class="note">재미용 챌린지예요. 실력을 보증하지 않으며 한국산업인력공단·한국교육과정평가원과 무관합니다.</p>
+  </section>
+
+  <section id="quiz" class="screen" hidden>
+    <div class="quiz-head">
+      <span id="progress">1 / 5</span>
+      <span id="seconds" aria-live="off">60</span>
+    </div>
+    <div class="timer"><div id="timer-bar"></div></div>
+    <h2 id="q-text"></h2>
+    <pre id="q-passage" hidden></pre>
+    <ol id="choices"></ol>
+    <p id="q-source" class="source"></p>
+  </section>
+
+  <section id="result" class="screen" hidden>
+    <p class="brand">ProveMe</p>
+    <p id="score" class="score"></p>
+    <p id="verdict" class="verdict"></p>
+    <div id="pass-box" hidden>
+      <img id="card-img" alt="통과 공유 카드">
+      <button id="share-btn" class="primary">공유하기</button>
+      <div class="row">
+        <a id="download-btn" class="secondary" download="proveme.png">이미지 저장</a>
+        <button id="copy-btn" class="secondary">링크 복사</button>
+      </div>
+      <p id="copy-msg" class="note" hidden>링크를 복사했어요.</p>
+    </div>
+    <button id="retry-btn" class="ghost">다시 도전</button>
+  </section>
+</main>
+
+<footer>
+  <p>본 저작물은 '한국산업인력공단'에서 <a href="https://www.kogl.or.kr/info/licenseType1.do" rel="noopener">공공누리 제1유형</a>으로 개방한 세무사 시험문제를 이용하였습니다.</p>
+  <p>재미용 챌린지예요. 실력을 보증하지 않으며 한국산업인력공단·한국교육과정평가원과 무관합니다.</p>
+  <p>made by brightiny9</p>
+</footer>
+
+<script src="app.js"></script>
+
+<!-- ANALYTICS (A): Cloudflare Web Analytics. Counts visits and referrers only (no query strings, no custom events).
+     Replace REPLACE_WITH_CF_SITE_TOKEN with the site token from the Cloudflare dashboard. -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_CF_SITE_TOKEN"}'></script>
+
+<!-- ANALYTICS (B, optional): GoatCounter counts the custom events sent by track() in app.js
+     (ref-share, start, pass, share). Create a free site code, then uncomment and replace REPLACE_WITH_GC_CODE.
+<script data-goatcounter="https://REPLACE_WITH_GC_CODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+-->
+</body>
+</html>
