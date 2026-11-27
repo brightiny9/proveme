@@ -1,0 +1,75 @@
+:root {
+  --paper: #f4efe6;
+  --ink: #1d1b18;
+  --muted: #6b655c;
+  --line: #d8d0c2;
+  --accent: #e2471b;
+  --ok: #1f7a4d;
+  --card: #fffaf2;
+  --font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.55;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+main { max-width: 520px; margin: 0 auto; padding: 24px 16px 8px; min-height: 80vh; }
+.screen[hidden], [hidden] { display: none !important; }
+
+.brand { font-weight: 800; letter-spacing: -0.02em; margin: 0 0 28px; font-size: 18px; }
+.brand::before { content: ""; display: inline-block; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+h1 { font-size: 30px; line-height: 1.3; letter-spacing: -0.03em; margin: 0 0 24px; }
+h1 em { font-style: normal; color: var(--accent); }
+.rules { padding: 0; margin: 0 0 28px; list-style: none; border-top: 1px solid var(--line); }
+.rules li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.note { color: var(--muted); font-size: 13px; margin: 16px 0 0; }
+
+button, .secondary { font: inherit; cursor: pointer; border-radius: 14px; border: 0; text-decoration: none; text-align: center; }
+.primary { display: block; width: 100%; padding: 17px; background: var(--ink); color: var(--paper); font-size: 17px; font-weight: 700; }
+.primary:disabled { opacity: 0.5; cursor: default; }
+.secondary { flex: 1; padding: 14px; background: var(--card); color: var(--ink); border: 1px solid var(--line); font-size: 15px; font-weight: 600; }
+.ghost { display: block; width: 100%; margin-top: 12px; padding: 15px; background: transparent; color: var(--ink); border: 1px solid var(--ink); font-size: 16px; font-weight: 600; }
+.row { display: flex; gap: 8px; margin-top: 8px; }
+
+.quiz-head { display: flex; justify-content: space-between; align-items: baseline; font-variant-numeric: tabular-nums; }
+#progress { color: var(--muted); font-size: 14px; font-weight: 600; }
+#seconds { font-size: 28px; font-weight: 800; }
+#seconds.low { color: var(--accent); }
+.timer { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin: 6px 0 20px; }
+#timer-bar { height: 100%; width: 100%; background: var(--ink); transform-origin: left; }
+.timer.low #timer-bar { background: var(--accent); }
+
+#q-text { font-size: 18px; line-height: 1.5; margin: 0 0 14px; letter-spacing: -0.01em; }
+#q-passage { white-space: pre-wrap; font-family: inherit; font-size: 15px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin: 0 0 14px; }
+#choices { list-style: none; padding: 0; margin: 0; }
+#choices li { margin-bottom: 8px; }
+#choices button {
+  display: flex; gap: 10px; width: 100%; text-align: left; padding: 13px 14px;
+  background: var(--card); color: var(--ink); border: 1px solid var(--line); font-size: 15px; line-height: 1.45;
+}
+#choices button .n { font-weight: 800; flex: none; }
+#choices button.correct { border-color: var(--ok); background: #e3f1e8; }
+#choices button.wrong { border-color: var(--accent); background: #fbe4dc; }
+#choices button:disabled { cursor: default; }
+.source { color: var(--muted); font-size: 12px; margin: 14px 0 0; }
+
+.score { font-size: 64px; font-weight: 800; letter-spacing: -0.04em; margin: 0; line-height: 1; font-variant-numeric: tabular-nums; }
+.verdict { font-size: 18px; margin: 10px 0 24px; }
+#card-img { display: block; width: 100%; border-radius: 16px; border: 1px solid var(--line); margin-bottom: 12px; }
+
+footer { max-width: 520px; margin: 0 auto; padding: 24px 16px 40px; color: var(--muted); font-size: 12px; }
+footer p { margin: 4px 0; }
+footer a { color: inherit; }
+
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #171614; --ink: #f1ebe0; --muted: #a59e92; --line: #3a3631; --card: #211f1c; }
+  #choices button.correct { background: #173a28; }
+  #choices button.wrong { background: #45201a; }
+}
